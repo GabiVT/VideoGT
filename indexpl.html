@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Video Multiplu - YouTube</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-items">
+            <a onclick="showPage('views')" id="menu-views">Vizionări</a>
+            <a onclick="showPage('playlists')" id="menu-playlists">Playlisturi</a>
+            <a onclick="showPage('add-playlist')" id="menu-add-playlist">Adaugă Playlist</a>
+            <a onclick="showPage('player')" id="menu-player">⏩️</a>
+        </div>
+    </div>
+
+    <!-- Vizionări Page -->
+    <div id="views" class="page">
+        <h1>Statistici Vizionări</h1>
+        <div id="playlists-views-list"></div>
+    </div>
+
+    <!-- Playlisturi Page -->
+    <div id="playlists" class="page">
+        <h1>Playlisturi</h1>
+        <div id="playlists-list"></div>
+    </div>
+
+    <!-- Adaugă Playlist Page -->
+    <div id="add-playlist" class="page active">
+        <h1>Creare Playlist</h1>
+        
+        <div class="tab-section">
+            <div class="tab-header">
+                <div class="tab-button active" onclick="switchTab('manual')">Adaugă playlist manual</div>
+                <div class="tab-button" onclick="switchTab('import')">Importă playlist</div>
+            </div>
+            
+            <div id="manual-tab" class="tab-content active">
+                <div class="global-progress">
+                    <div class="global-progress-bar" id="global-progress"></div>
+                    <div class="progress-text" id="progress-text">0% complet</div>
+                </div>
+                
+                <div class="controls">
+                    <div class="form-group">
+                        <label for="playlist-name">Nume playlist:</label>
+                        <input type="text" id="playlist-name" placeholder="Introdu numele playlistului">
+                    </div>
+                    <div class="form-group">
+                        <label for="video-url">Link video:</label>
+                        <input type="text" id="video-url" placeholder="Introdu link YouTube">
+                    </div>
+                    <div class="button-group">
+                        <button class="success" onclick="addVideo()">Adaugă Video</button>
+                        <button class="success" onclick="savePlaylist()">Salvează Playlist</button>
+                    </div>
+                </div>
+
+                <div class="video-container" id="thumbnails"></div>
+            </div>
+            
+            <div id="import-tab" class="tab-content">
+                <div class="form-group">
+                    <label for="share-playlist-data">Cod playlist:</label>
+                    <textarea id="share-playlist-data" placeholder="Introdu codul playlistului" rows="5"></textarea>
+                </div>
+                <div class="button-group">
+                    <button class="success" onclick="importPlaylist()">Importă Playlist</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Player Page -->
+    <div id="player" class="page player-page">
+        <h1>Player Playlist</h1>
+        
+        <div class="playlist-selector">
+            <label for="playlist-select">Alege playlist:</label>
+            <select id="playlist-select" onchange="loadSelectedPlaylist()">
+                <option value="">-- Selectează un playlist --</option>
+            </select>
+        </div>
+        
+        <div class="global-progress">
+            <div class="global-progress-bar" id="player-progress"></div>
+            <div class="progress-text" id="player-progress-text">0% complet</div>
+        </div>
+        
+        <button class="play-all-btn success" onclick="playAllVideos()">▶️ Toate videoclipurile</button>
+        
+        <div class="video-container" id="player-thumbnails"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.28/jspdf.plugin.autotable.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

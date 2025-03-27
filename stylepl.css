@@ -1,0 +1,308 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+.menu {
+    background-color: #2c3e50;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+.menu-items {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+}
+.menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+    position: relative;
+}
+.menu a:hover {
+    background-color: #34495e;
+}
+.menu .active-page {
+    background-color: #3498db;
+    font-weight: bold;
+}
+.menu .active-page:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: white;
+}
+.page {
+    display: none;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.active {
+    display: block;
+}
+.controls {
+    margin-bottom: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+.video-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+.video-box {
+    position: relative;
+    width: calc(25% - 15px);
+    min-width: 250px;
+    height: 180px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+.video-box:hover {
+    transform: translateY(-5px);
+}
+.global-progress {
+    width: 100%;
+    height: 20px;
+    background: #e0e0e0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+.global-progress-bar {
+    width: 0%;
+    height: 100%;
+    background: #e74c3c;
+    transition: width 0.3s;
+}
+.progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+button:hover {
+    background-color: #2980b9;
+}
+button.danger {
+    background-color: #e74c3c;
+}
+button.danger:hover {
+    background-color: #c0392b;
+}
+button.success {
+    background-color: #2ecc71;
+}
+button.success:hover {
+    background-color: #27ae60;
+}
+button.play-btn {
+    padding: 5px 10px;
+    background: none;
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+button.play-btn:hover {
+    background: rgba(52, 152, 219, 0.1);
+}
+button.play-btn.playing {
+    background-color: #3498db;
+    color: white;
+}
+button.play-all-btn {
+    margin-bottom: 15px;
+}
+input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+input:focus, textarea:focus, select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+.playlist-item {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.playlist-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.playlist-item .playlist-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.playlist-item.expanded .playlist-content {
+    max-height: 500px;
+    margin-top: 15px;
+}
+.video-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+}
+.remove-btn {
+    color: #e74c3c;
+    cursor: pointer;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.remove-btn:hover {
+    color: #c0392b;
+}
+.stats-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.stats-item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.stats-item:last-child {
+    border-bottom: none;
+}
+h1, h2, h3 {
+    color: #2c3e50;
+}
+.playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.tab-section {
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    overflow: hidden;
+}
+.tab-header {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+.tab-button {
+    padding: 15px;
+    background: #f9f9f9;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    transition: all 0.3s;
+}
+.tab-button:hover {
+    background: #f0f0f0;
+}
+.tab-button.active {
+    background: white;
+    font-weight: bold;
+    border-bottom: 3px solid #3498db;
+}
+.tab-content {
+    padding: 15px;
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+.playlist-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+.video-actions {
+    display: flex;
+    gap: 5px;
+}
+.play-icon::after {
+    content: '▶';
+}
+.pause-icon::after {
+    content: '⏸';
+}
+.player-page {
+    display: none;
+}
+.player-page.active {
+    display: block;
+}
+.playlist-selector {
+    margin-bottom: 20px;
+}
+.playlist-selector select {
+    margin-top: 5px;
+}
+.report-btn {
+    background-color: #9b59b6;
+}
+.report-btn:hover {
+    background-color: #8e44ad;
+}
