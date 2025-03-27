@@ -1,0 +1,9 @@
+youtube-multiplayer/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   └── js/
+│       └── script.js
+├── README.md
+└── LICENSE
